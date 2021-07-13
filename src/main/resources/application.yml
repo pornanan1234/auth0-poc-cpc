@@ -1,0 +1,54 @@
+server:
+  port: 3002
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: DlMRAGyW3jPA9vgvwcAu36Sj1pVfswzB
+            client-secret: xQoMjYrJDyPbYPlyG0iPlN2J33rgouiQeqr_37JyTvHrfbM30vUjt2GmSYTYjmWm
+            grant_type: authorization_code
+            token_endpoint_auth_method: none
+            scope:
+              - openid
+              - profile
+              - email
+              - read
+        provider:
+          auth0:
+          # trailing slash is important!
+            issuer-uri: https://abacpoc.us.auth0.com/
+            authorization-uri: https://abacpoc.us.auth0.com/authorize
+            token-uri: https://abacpoc.us.auth0.com/oauth/token
+            user-info-uri: https://abacpoc.us.auth0.com/userinfo
+            jwk-set-uri: https://abacpoc.us.auth0.com/.well-known/jwks.json
+      resourceserver:
+        jwt:
+          issuer-uri: https://abacpoc.us.auth0.com/
+
+
+
+  datasource:
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+    url: jdbc:h2:mem:testdb
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /DB
+      settings:
+       trace: false
+
+
+http:
+  logout:
+    delete-cookies: JSESSIONID
+

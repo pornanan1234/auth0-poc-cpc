@@ -1,0 +1,15 @@
+
+okta.oauth2.issuer=https://xom-poc.okta.com/oauth2/auspdolvnEZiFfZhu5d6
+okta.oauth2.client-secret=2bnQyMQ0tA7bOWXpPXJnAU_nhyXsuKrFKOIbD0Z8
+okta.oauth2.client-id=0oarprsoofpoIXI4e5d6
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+#spring.datasource.url=jdbc:h2:file:/data/demo
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.h2.console.enabled=true
+spring.h2.console.path=/DB
+spring.h2.console.settings.trace=false
+#spring.h2.console.settings.web-allow-others=false
+server.port=8081
